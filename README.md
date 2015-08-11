@@ -1,2 +1,2 @@
-#web4beego
-#This is My web for blogs.
+#web4blog
+#This is My web for blog.
