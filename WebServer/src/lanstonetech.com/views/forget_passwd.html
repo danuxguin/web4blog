@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+
+
+    <title>LanStone - Login</title>
+
+
+
+    <link rel='stylesheet prefetch' href='../static/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='../static/css/sign_or_login.css'>
+
+<script>
+    window.console = window.console || function(t) {};
+    window.open = function(){ console.log("window.open is disabled."); };
+</script>
+
+  </head>
+
+  <body>
+
+    <div id="fullBg" />
+
+    <div class="container">
+      <form class="form-signin" method="post" action="forgetpasswd">
+          <h1 class="form-signin-heading">Forget Password</h1>
+          <input id="telphone" type="text" class="form-control" name="telphone" placeholder="Telphone" required="" autofocus="" />
+          <input id="email" type="emailbuttom" class="form-control" name="email" placeholder="Email" required=""/>
+          <button class="btn btn-lg btn-primary btn-block" type="submit"> Commit </button>
+        </form>
+
+      <p class="text-center sign-up"> Will send initial password to your email, Please check it!</p>
+    </div>
+
+<script>
+    if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+    }
+</script>
+
+<script type="text/javascript">
+    function checkInput() {
+        var account = document.getElementById("account");
+        if (account.value.length == 0) {
+            alert("Please Input Account");
+            return false;
+        }
+        var password = document.getElementById("password");
+        if (password.value.length == 0) {
+            alert("Please Input Password");
+            return false;
+        }
+
+        return true;
+    }
+
+    function backToHome() {
+        window.location.href = "/";
+        return false;
+    }
+</script>
+
+  </body>
+</html>

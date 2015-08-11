@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{.Topic.Title}} - LanStone Tech</title>
+        <link rel="shortcut icon" href="/static/image/favicon.png">
+        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">蓝石头科技-博客</a>
+                <ul class="nav navbar-nav">
+                    <li {{if .IsHome}} class="active" {{end}}><a href="/">首页</a></li>
+                    <!-- <li {{if .IsCategory}} class="active" {{end}}><a href="/category">分类</a></li> -->
+                    <li {{if .IsTopic}} class="active" {{end}}><a href="/topic">文章</a></li>
+                </ul>
+
+                <div class="pull-right">
+                   <ul class="nav navbar-nav">
+                      <li><a href="/">Hi {{.Name}}</a></li>
+                      {{if .IsLogin}}
+                      <li><a href="/login?exit=true">Exit</a></li>
+                      {{else}}
+                      <li><a href="/login">Login</a></li>
+                      {{end}}
+                   </ul>
+               </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="container">
+                <h1>
+                    {{.Topic.Title}}
+                {{if .Ishost}}
+                    <a href="/topic/modify?tid={{.Tid}}" class="btn btn-default">修改文章</a>
+                {{end}}
+                </h1>
+                <br>
+            <script type="text/javascript">
+                 document.write({{.Topic.Content}});
+             </script>
+        </div>
+
+        <br><br>
+
+        <div class="container">
+        <form method="post" action="/topic">
+            <input type="hidden" name="tid" value="{{.Tid}}">
+            <input type="hidden" name="type" value=3>
+            <div class="form-group">
+                <label>发表评论: </label>
+                <textarea name="content" cols=30 rows="5" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">评论</button>
+        </form>
+        </div>
+
+        <div class="container">
+            {{range .Replys}}
+            <div class="page-header">
+                <label>{{.Name}}: </label>
+               <p>
+               <script type="text/javascript">
+                    document.write({{.Content}});
+                </script>
+               </p>
+               <h6 class="text-muted">评论发表与{{.ReplyTime}}。</h6>
+           </div>
+           {{end}}
+       </div>
+
+        <!-- <script type="text/javascript" src="http://cdn.staticfile.org/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js"></<script>
+        <script type="text/javascript" src="/static/js/bootstrap.min.js"></<script> -->
+    </body>
+</html>

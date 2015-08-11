@@ -1,0 +1,39 @@
+package main
+
+import (
+	"fmt"
+	"html/template"
+	"net/http"
+)
+
+func main() {
+	http.HandleFunc("/", Hey)
+	http.ListenAndServe(":8080", nil)
+}
+
+const tpl = `
+    <html>
+        <head>
+            <title>Hey</title>
+        </head>
+        <body>
+            <form method="post" action="/">
+                Username: <input type="text" name="username">
+                Password: <input type="password" name="password">
+                <button type="submit">Submit</button>
+            </form>
+        </body>
+    </html>
+`
+
+func Hey(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "Get" {
+		t := template.New("hey")
+		t.Parse(tpl)
+		t.Execute(w, tpl)
+	} else {
+		fmt.Println(r.FormValue("username"))
+		fmt.Println(r.FormValue("password"))
+	}
+
+}

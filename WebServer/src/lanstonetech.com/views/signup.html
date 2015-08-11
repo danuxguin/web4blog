@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+
+    <title>LanStone - Login</title>
+
+    <link rel='stylesheet prefetch' href='../static/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='../static/css/sign_or_login.css'>
+
+<script>
+    window.console = window.console || function(t) {};
+    window.open = function(){ console.log("window.open is disabled."); };
+</script>
+
+</head>
+
+<body>
+
+<div id="fullBg" />
+<div class="container">
+  <form class="form-signin" method="post" action="signup">
+      <h1 class="form-signin-heading">Please Sign Up</h1>
+      <input id="username" type="text" class="form-control" name="username" placeholder="User Name" required="" autofocus="" />
+      <input id="telphone" type="tel" class="form-control" name="telphone" placeholder="Telphone" required="" />
+      <input id="email" type="email" class="form-control" name="email" placeholder="Email Address" required="" />
+      <input id="password" type="password" class="form-control" name="password" placeholder="Password" required="" />
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="return checkInput()"> Sign Up </button>
+  </form>
+  <p class="text-center sign-up"><a href="login"><strong>Login In</strong></a></p>
+</div>
+
+<script>
+    if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+    }
+</script>
+
+<script type="text/javascript">
+    function checkInput() {
+        var username = document.getElementById("username");
+        if (username.value.length == 0) {
+            alert("Please Input User Name");
+            return false;
+        }
+
+        var email = document.getElementById("email");
+        if (email.value.length == 0) {
+            alert("Please Input Email");
+            return false;
+        }
+
+        var telphone = document.getElementById("telphone");
+        if (telphone.value.length == 0) {
+            alert("Please Input Telphone");
+            return false;
+        }
+
+        var password = document.getElementById("password");
+        if (password.value.length == 0) {
+            alert("Please Input Password");
+            return false;
+        }
+        
+        return fasle;
+    }
+</script>
+
+</body>
+</html>
