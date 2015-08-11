@@ -4,7 +4,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="google" value="notranslate">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <title>LanStone - Login</title>
@@ -26,14 +25,18 @@
     <div id="fullBg" />
 
     <div class="container">
-      <form class="form-signin" method="post" action="forgetpasswd">
-          <h1 class="form-signin-heading">Forget Password</h1>
-          <input id="telphone" type="text" class="form-control" name="telphone" placeholder="Telphone" required="" autofocus="" />
-          <input id="email" type="emailbuttom" class="form-control" name="email" placeholder="Email" required=""/>
-          <button class="btn btn-lg btn-primary btn-block" type="submit"> Commit </button>
+      <form class="form-signin" method="post" action="login">
+          <h1 class="form-signin-heading">Please Login</h1>
+          <input id="account" type="text" class="form-control" name="account" placeholder="Telphone" required="" autofocus="" />
+          <input id="password" type="password" class="form-control" name="password" placeholder="Password" required=""/>
+          <!-- <label>
+              <input type="checkbox" class="form-control" name="autologin">Remember Password
+          </label> -->
+          <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="return checkInput()"> Log in </button>
+          <button class="btn btn-lg btn-primary btn-block" onclick="return backToHome()"> Back To Home </button>
         </form>
 
-      <p class="text-center sign-up"> Will send initial password to your email, Please check it!</p>
+      <p class="text-center sign-up"><a href="signup"><strong>Sign up</strong> for a new account</a> &nbsp&nbsp&nbsp&nbsp<a href="forgetpasswd">Forget Password</a></p>
     </div>
 
 <script>

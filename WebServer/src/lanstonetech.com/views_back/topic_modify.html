@@ -4,12 +4,8 @@
         <title>添加文章 - LanStone Tech</title>
         <link rel="shortcut icon" href="/static/image/favicon.png">
         <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-        <script type="text/javascript" src="/static/js/jquery-1.11.3.js"></script>
-        <!--script type="text/javascript" src="http://cdn.staticfile.org/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js"></script-->
-        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script> 
-        <!--script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="/static/js/tinymce/tinymce.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript">
     　　 tinymce.init({
     　　　　selector: "textarea",
@@ -33,39 +29,18 @@
     </head>
 
     <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-<div class="container-fluid">
-                    
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">蓝石头-博客</a>
-    </div>
-                
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <!--div class="navbar navbar-default navbar-fixed-top"-->
-                      
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">蓝石头科技-博客</a>
                 <ul class="nav navbar-nav">
-                    <li {{if .IsHome}} class="active" {{end}}><a href="/">首页<span class="sr-only">(current)</span></a></li>
+                    <li {{if .IsHome}} class="active" {{end}}><a href="/">首页</a></li>
                     <!-- <li {{if .IsCategory}} class="active" {{end}}><a href="/category">分类</a></li> -->
                     <li {{if .IsTopic}} class="active" {{end}}><a href="/topic">文章</a></li>
                 </ul>
-               
-<form class="navbar-form navbar-left" role="search">
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
 
                 <div class="pull-right">
                    <ul class="nav navbar-nav">
-                       <li><a href="/">Hi {{.Name}}</a></li>
+                      <li><a href="/">Hi {{.Name}}</a></li>
                       {{if .IsLogin}}
                       <li><a href="/login?exit=true">Exit</a></li>
                       {{else}}
@@ -73,11 +48,10 @@
                       {{end}}
                    </ul>
                </div>
-        <!--/div-->
-</div>
-</div>
-</nav>
-        <br><br><br>
+            </div>
+        </div>
+
+    <br><br><br>
 
         <div class="container">
             <h1>修改文章</h1>
